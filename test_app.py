@@ -24,7 +24,7 @@ def clean_tasks():
 def test_health(client):
     """Test du health check"""
     response = client.get('/health')
-    assert response.status_code == 200
+    assert response.status_code == 999
     data = response.get_json()
     assert data['status'] == 'healthy'
     assert data['service'] == 'taskflow'
